@@ -1,0 +1,27 @@
+{
+  "name": "cse341-madella",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carolmadella/CSE341-madella.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carolmadella/CSE341-madella/issues"
+  },
+  "homepage": "https://github.com/carolmadella/CSE341-madella#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "save": "^2.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
