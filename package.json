@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/carolmadella/CSE341-madella#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mongodb": "^6.6.0",
     "save": "^2.9.0"
   },
   "devDependencies": {

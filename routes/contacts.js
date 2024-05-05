@@ -2,6 +2,7 @@ const routes = require("express").Router();
 
 const myController = require("../controllers");
 
-routes.get("/", myController.awesomePerson); // from previous class
+routes.get("/all", myController.allContacts);
+routes.get("/single/:id", myController.singleContact);
 
 module.exports = routes;

@@ -4,3 +4,10 @@ GET http://localhost:5500 HTTP/1.1
 
 ###
 GET https://cse341-madella.onrender.com HTTP/1.1
+
+###
+GET http://localhost:5500/contacts/all HTTP/1.1
+
+
+###
+GET http://localhost:5500/contacts/single/6633db67dd0e48ff86294ceb HTTP/1.1
