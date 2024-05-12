@@ -28,3 +28,13 @@ content-type: application/json
     "favoriteColor": "Purple",
     "birthday":"01/01/1900"
 }
+
+### LOCALHOST
+PUT http://localhost:5500/contacts/6640255cd9b50731818418b0 HTTP/1.1
+content-type: application/json
+
+{"favoriteColor": "Blue"}
+
+
+### LOCALHOST
+DELETE http://localhost:5500/contacts/6640255cd9b50731818418b0 HTTP/1.1
