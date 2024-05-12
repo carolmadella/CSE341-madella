@@ -15,3 +15,16 @@ GET http://localhost:5500/contacts/all HTTP/1.1
 
 ### LOCALHOST
 GET http://localhost:5500/contacts/single/6633db67dd0e48ff86294ceb HTTP/1.1
+
+
+### LOCALHOST
+POST http://localhost:5500/contacts/ HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "M",
+    "email": "rjohn@test.com",
+    "favoriteColor": "Purple",
+    "birthday":"01/01/1900"
+}

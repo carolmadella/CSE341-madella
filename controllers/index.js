@@ -48,4 +48,32 @@ const singleContact = async (req, res, next) => {
   }
 };
 
-module.exports = { awesomePerson, allContacts, singleContact };
+
+const createContact = async (req, res, next) => {   
+   // copied from ChatGPT some of the code below
+   // Assuming the request body contains the contact information
+   const newContact = req.body;
+   console.log("Data body", newContact)
+
+  try {
+    const db = await mongodb.connectDB();
+    const collection = db.collection('contacts');
+
+   
+
+    // Insert the new contact into the collection
+    const result = await collection.insertOne(newContact);
+    const contactId = result.insertedId.toString()
+
+    res.status(201).json({ message: 'Contact inserted successfully', id: contactId});
+  } catch (error) {
+    console.error('Error inserting contact:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+
+
+
+
+module.exports = { awesomePerson, allContacts, singleContact, createContact };
