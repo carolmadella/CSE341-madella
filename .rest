@@ -38,3 +38,26 @@ content-type: application/json
 
 ### LOCALHOST
 DELETE http://localhost:5500/contacts/6640255cd9b50731818418b0 HTTP/1.1
+
+
+### RENDER
+POST https://cse341-madella.onrender.com/contacts/ HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "M",
+    "email": "rjohn@test.com",
+    "favoriteColor": "Purple",
+    "birthday":"01/01/1900"
+}
+
+### RENDER
+PUT https://cse341-madella.onrender.com/contacts/664041c1c10417e3662c181a HTTP/1.1
+content-type: application/json
+
+{"favoriteColor": "Blue"}
+
+
+### RENDER
+DELETE https://cse341-madella.onrender.com/contacts/664041c1c10417e3662c181a HTTP/1.1
