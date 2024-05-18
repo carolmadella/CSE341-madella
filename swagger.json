@@ -13,6 +13,7 @@
   "paths": {
     "/contacts/": {
       "get": {
+        "summary": "Get all contacts",
         "description": "Get all contacts",
         "responses": {
           "201": {
@@ -26,6 +27,7 @@
     },
     "/contacts/{id}": {
       "get": {
+        "summary": "Get one contact, given id as parameter",
         "description": "Get one contact, given id as parameter",
         "parameters": [
           {
@@ -96,6 +98,7 @@
     },
     "/contacts/{id}": {
       "put": {
+        "summary": "Update Contact with provided data, given an Id as parameter",
         "description": "Update Contact with provided data, given an Id as parameter",
         "parameters": [
           {
@@ -153,6 +156,7 @@
         }
       },
       "delete": {
+        "summary": "Delete contact given parameter",
         "description": "Delete contact given parameter",
         "parameters": [
           {
