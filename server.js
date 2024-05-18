@@ -3,6 +3,7 @@ var bodyParser = require("body-parser");
 var app = express();
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const swaggerDoc = require("./swagger.json") 
 
 const options = {
   definition: {
@@ -11,8 +12,9 @@ const options = {
       title: "CSE341 API",
       version: "1.0.0",
     },
-    servers: [{ url: "http://localhost:5500" }],
+    servers: [{ url: process.env.URL }],
   },
+  swaggerDefinition: swaggerDoc,
   apis: ["./routes/*.js"], // Use a glob pattern to include all route files
 };
 

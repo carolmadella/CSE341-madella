@@ -17,9 +17,10 @@ const allContacts = async (req, res, next) => {
 
     console.log(contacts);
 
-    res.json(contacts);
+    res.status(201).json(contacts);
   } catch (err) {
     console.error("Error reading documents:", err);
+    res.status(500).json({ error: "Internal server error" });
   }
 };
 
@@ -128,11 +129,19 @@ const deleteContact = async (req, res, next) => {
   }
 }
 
+const swaggerSpecs = async (req, res, next) => {
+
+}
+
+
+
+
 module.exports = {
   awesomePerson,
   allContacts,
   singleContact,
   createContact,
   updateContact,
-  deleteContact
+  deleteContact,
+  swaggerSpecs
 };

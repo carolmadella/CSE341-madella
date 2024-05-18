@@ -1,0 +1,179 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "CSE 341",
+    "description": "Contacts App week",
+    "version": "1.0.0"
+  },
+  "host": "http://localhost:5500",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/contacts/all": {
+      "get": {
+        "description": "Get all contacts",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/contacts/single/{id}": {
+      "get": {
+        "description": "Get one contact, given id as parameter",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/contacts": {
+      "post": {
+        "summary": "Create a new contact",
+        "description": "Create a new contact with the provided data",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string",
+                    "example": "John"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "M"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "rjohn@test.com"
+                  },
+                  "favoriteColor": {
+                    "type": "string",
+                    "example": "Purple"
+                  },
+                  "birthday": {
+                    "type": "string",
+                    "format": "date",
+                    "example": "1900-01-01"
+                  }
+                },
+                "required": ["firstName", "lastName", "email", "favoriteColor", "birthday"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/contacts/{id}": {
+      "put": {
+        "description": "Update Contact with provided data, given an Id as parameter",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "type": "string",
+                    "example": "John"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "M"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "rjohn@test.com"
+                  },
+                  "favoriteColor": {
+                    "type": "string",
+                    "example": "Purple"
+                  },
+                  "birthday": {
+                    "type": "string",
+                    "format": "date",
+                    "example": "1900-01-01"
+                  }
+                },
+                "required": ["firstName", "lastName", "email", "favoriteColor", "birthday"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete contact given parameter",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
