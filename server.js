@@ -1,4 +1,5 @@
 var express = require("express");
+const cors = require("cors");
 var bodyParser = require("body-parser");
 var app = express();
 const swaggerJsdoc = require("swagger-jsdoc");
@@ -19,6 +20,9 @@ const options = {
 };
 
 const swaggerSpecs = swaggerJsdoc(options);
+
+// Use CORS middleware
+app.use(cors());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
