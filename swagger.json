@@ -11,7 +11,7 @@
     "http"
   ],
   "paths": {
-    "/contacts/all": {
+    "/contacts/": {
       "get": {
         "description": "Get all contacts",
         "responses": {
@@ -24,7 +24,7 @@
         }
       }
     },
-    "/contacts/single/{id}": {
+    "/contacts/{id}": {
       "get": {
         "description": "Get one contact, given id as parameter",
         "parameters": [

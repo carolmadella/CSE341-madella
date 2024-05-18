@@ -3,10 +3,10 @@ const routes = require("express").Router();
 const myController = require("../controllers");
 
 
-routes.get("/contacts/all", myController.allContacts);
+routes.get("/contacts", myController.allContacts);
 
 
-routes.get("/contacts/single/:id", myController.singleContact);
+routes.get("/contacts/:id", myController.singleContact);
 
 
 routes.post("/contacts", myController.createContact);
