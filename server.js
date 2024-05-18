@@ -4,7 +4,9 @@ var bodyParser = require("body-parser");
 var app = express();
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-const swaggerDoc = require("./swagger.json") 
+const swaggerDoc = require("./swagger.json");
+
+// Added the code below to implement swagger docs with help of ChatGPT
 
 const options = {
   definition: {
@@ -16,7 +18,7 @@ const options = {
     servers: [{ url: process.env.URL }],
   },
   swaggerDefinition: swaggerDoc,
-  apis: ["./routes/*.js"], // Use a glob pattern to include all route files
+  apis: ["./routes/*.js"], // Use a global pattern to include all route files
 };
 
 const swaggerSpecs = swaggerJsdoc(options);
